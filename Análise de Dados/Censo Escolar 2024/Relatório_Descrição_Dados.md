@@ -108,8 +108,7 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | CO_ORGAO_REGIONAL | Código do Órgão Regional de Ensino |
 | CO_ESCOLA_SEDE_VINCULADA | Código da escola sede |
 | CO_IES_OFERTANTE | Código da IES vinculada à escola |
-| QT_MAT_BAS | Número de Matrículas da Educação Básica
- |
+| QT_MAT_BAS | Número de Matrículas da Educação Básica |
 | QT_MAT_INF | Número de Matrículas da Educação Infantil |
 | QT_MAT_INF_CRE | Número de Matrículas da Educação Infantil - Creche |
 | QT_MAT_INF_PRE | Número de Matrículas da Educação Infantil - Pré-Escola |
@@ -183,104 +182,6 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | DURACAO_EM_DIAS | Descrição não encontrada |
 | PC_TEMPO_INTEGRAL | Descrição não encontrada |
 | INDICE_TEC | Descrição não encontrada |
-
-
-```
-
-| Nome da Variável | Descrição da Variável |
-|---|---|
-| CO\_ENTIDADE | Código da Escola |
-| NO\_ENTIDADE | Nome da Escola |
-| NO\_REGIAO | Nome da Região Geográfica |
-| CO\_REGIAO | Código da Região Geográfica |
-| NO\_UF | Nome da Unidade da Federação |
-| SG\_UF | Sigla da Unidade da Federação |
-| CO\_UF | Código da Unidade da Federação |
-| NO\_MUNICIPIO | Nome do Município |
-| CO\_MUNICIPIO | Código do Município |
-| TP\_DEPENDENCIA | Dependência Administrativa |
-| TP\_CATEGORIA\_ESCOLA\_PRIVADA | Categoria da escola privada |
-| TP\_LOCALIZACAO | Localização |
-| TP\_LOCALIZACAO\_DIFERENCIADA | Localização diferenciada da escola |
-| TP\_SITUACAO\_FUNCIONAMENTO | Situação de funcionamento |
-| IN\_PREDIO\_COMPARTILHADO | Prédio compartilhado com outra escola |
-| CO\_ORGAO\_REGIONAL | Código do Órgão Regional de Ensino |
-| CO\_ESCOLA\_SEDE\_VINCULADA | Código da escola sede |
-| CO\_IES\_OFERTANTE | Código da IES vinculada à escola |
-| QT\_MAT\_BAS | Número de Matrículas da Educação Básica |
-| QT\_MAT\_INF | Número de Matrículas da Educação Infantil |
-| QT\_MAT\_INF\_CRE | Número de Matrículas da Educação Infantil - Creche |
-| QT\_MAT\_INF\_PRE | Número de Matrículas da Educação Infantil - Pré-Escola |
-| QT\_MAT\_FUND | Número de Matrículas do Ensino Fundamental |
-| QT\_MAT\_FUND\_AI | Número de Matrículas do Ensino Fundamental - Anos Iniciais |
-| QT\_MAT\_FUND\_AF | Número de Matrículas do Ensino Fundamental - Anos Finais |
-| QT\_MAT\_MED | Número de Matrículas do Ensino Médio |
-| QT\_MAT\_FUND\_AI\_1 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 1º Ano |
-| QT\_MAT\_FUND\_AI\_2 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 2º Ano |
-| QT\_MAT\_FUND\_AI\_3 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 3º Ano |
-| QT\_MAT\_FUND\_AI\_4 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 4º Ano |
-| QT\_MAT\_FUND\_AI\_5 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 5º Ano |
-| QT\_MAT\_FUND\_AF\_6 | Número de Matrículas do Ensino Fundamental - Anos Finais - 6º Ano |
-| QT\_MAT\_FUND\_AF\_7 | Número de Matrículas do Ensino Fundamental - Anos Finais - 7º Ano |
-| QT\_MAT\_FUND\_AF\_8 | Número de Matrículas do Ensino Fundamental - Anos Finais - 8º Ano |
-| QT\_MAT\_FUND\_AF\_9 | Número de Matrículas do Ensino Fundamental - Anos Finais - 9º Ano |
-| QT\_MAT\_BAS\_FEM | Número de Matrículas da Educação Básica - Feminino |
-| QT\_MAT\_BAS\_MASC | Número de Matrículas da Educação Básica - Masculino |
-| QT\_MAT\_BAS\_ND | Número de Matrículas da Educação Básica - Cor/Raça Não Declarada |
-| QT\_MAT\_BAS\_BRANCA | Número de Matrículas da Educação Básica - Cor/Raça Branca |
-| QT\_MAT\_BAS\_PRETA | Número de Matrículas da Educação Básica - Cor/Raça Preta |
-| QT\_MAT\_BAS\_PARDA | Número de Matrículas da Educação Básica - Cor/Raça Parda |
-| QT\_MAT\_BAS\_AMARELA | Número de Matrículas da Educação Básica - Cor/Raça Amarela |
-| QT\_MAT\_BAS\_INDIGENA | Número de Matrículas da Educação Básica - Cor/Raça Indígena |
-| QT\_MAT\_BAS\_0\_3 | Número de Matrículas da Educação Básica - Até 3 anos de idade |
-| QT\_MAT\_BAS\_4\_5 | Número de Matrículas da Educação Básica - Entre 4 e 5 anos de idade |
-| QT\_MAT\_BAS\_6\_10 | Número de Matrículas da Educação Básica - Entre 6 e 10 anos de idade |
-| QT\_MAT\_BAS\_11\_14 | Número de Matrículas da Educação Básica - Entre 11 e 14 anos de idade |
-| QT\_MAT\_BAS\_15\_17 | Número de Matrículas da Educação Básica - Entre 15 e 17 anos de idade |
-| QT\_MAT\_BAS\_18\_MAIS | Número de Matrículas da Educação Básica - Com 18 ou mais anos de idade |
-| QT\_MAT\_INF\_INT | Número de Matrículas da Educação Infantil - Tempo Integral |
-| QT\_MAT\_INF\_CRE\_INT | Número de Matrículas da Educação Infantil - Creche - Tempo Integral |
-| QT\_MAT\_INF\_PRE\_INT | Número de Matrículas da Educação Infantil - Pré-Escola - Tempo Integral |
-| QT\_MAT\_FUND\_INT | Número de Matrículas do Ensino Fundamental - Tempo Integral |
-| QT\_MAT\_FUND\_AI\_INT | Número de Matrículas do Ensino Fundamental - Anos Iniciais - Tempo Integral |
-| QT\_MAT\_FUND\_AF\_INT | Número de Matrículas do Ensino Fundamental - Anos Finais - Tempo Integral |
-| QT\_MAT\_MED\_INT | Número de Matrículas do Ensino Médio - Tempo Integral |
-| QT\_MAT\_BAS\_EAD | Número de Matrículas da Educação Básica - Turno não aplicável para turmas semipresenciais ou de Educação a Distância (EAD) |
-| QT\_MAT\_BAS\_D | Número de Matrículas da Educação Básica - Turno Diurno |
-| QT\_MAT\_BAS\_N | Número de Matrículas da Educação Básica - Turno Noturno |
-| QT\_MAT\_ZR\_URB | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Urbana |
-| QT\_MAT\_ZR\_RUR | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Rural |
-| QT\_MAT\_ZR\_NA | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Não aplicável para alunos residentes no exterior |
-| IN\_INTERNET | Acesso à Internet |
-| IN\_BANDA\_LARGA | Internet Banda Larga |
-| IN\_INTERNET\_ALUNOS | Acesso à Internet - Para uso dos alunos |
-| IN\_ACESSO\_INTERNET\_COMPUTADOR | Equipamentos que os alunos usam para acessar a internet da escola - Computadores de mesa, portáteis e tablets da escola (no laboratório de informática, biblioteca, sala de aula etc.) |
-| IN\_ACES\_INTERNET\_DISP\_PESSOAIS | Equipamentos que os alunos usam para acessar a internet da escola - Dispositivos pessoais (computadores portáteis, celulares, tablets etc.) |
-| TP\_REDE\_LOCAL | Rede local de interligação de computadores |
-| IN\_LABORATORIO\_INFORMATICA | Dependências físicas existentes e utilizadas na escola - Laboratório de informática |
-| IN\_COMPUTADOR | Equipamentos existentes na escola para uso técnico e administrativo - Computador |
-| IN\_DESKTOP\_ALUNO | Computadores em uso pelos alunos - Computador de mesa (desktop) |
-| QT\_DESKTOP\_ALUNO | Quantidade de computadores em uso pelos alunos - Computador de mesa (desktop) |
-| IN\_COMP\_PORTATIL\_ALUNO | Computadores em uso pelos alunos - Computador portátil |
-| QT\_COMP\_PORTATIL\_ALUNO | Quantidade de computadores em uso pelos alunos - Computador portátil |
-| IN\_TABLET\_ALUNO | Computadores em uso pelos alunos - Tablet |
-| QT\_TABLET\_ALUNO | Quantidade de computadores em uso pelos alunos - Tablet |
-| IN\_LOCAL\_FUNC\_PREDIO\_ESCOLAR | Local de funcionamento da escola - Prédio Escolar |
-| TP\_OCUPACAO\_PREDIO\_ESCOLAR | Forma de ocupação do Prédio escolar |
-| IN\_LOCAL\_FUNC\_SOCIOEDUCATIVO | Local de funcionamento da escola - Unidade de Atendimento socioeducativo |
-| IN\_LOCAL\_FUNC\_UNID\_PRISIONAL | Local de funcionamento da escola - Unidade Prisional |
-| IN\_LOCAL\_FUNC\_PRISIONAL\_SOCIO | Local de funcionamento da escola - Unidade Prisional ou Unidade de atendimento socioeducativo |
-| IN\_LOCAL\_FUNC\_GALPAO | Local de funcionamento da escola - Galpão/Rancho/Paiol/Barracão |
-| TP\_OCUPACAO\_GALPAO | Forma de ocupação do Galpão/Rancho/Paiol/Barracão |
-| IN\_LOCAL\_FUNC\_SALAS\_OUTRA\_ESC | Local de funcionamento da escola - Salas em outra escola |
-| IN\_LOCAL\_FUNC\_OUTROS | Local de funcionamento da escola - Outros |
-| NU\_ANO\_CENSO | Ano do Censo |
-| DT\_ANO\_LETIVO\_INICIO | Início do ano letivo |
-| DT\_ANO\_LETIVO\_TERMINO | Término (previsão) do ano letivo |
-| DURACAO\_ANO\_LETIVO | Descrição não encontrada |
-| DURACAO\_EM\_DIAS | Descrição não encontrada |
-| PC\_TEMPO\_INTEGRAL | Descrição não encontrada |
-| INDICE\_TEC | Descrição não encontrada |
 
 * **Justificativa da Escolha:**
     A seleção foi projetada para criar um subconjunto de dados coeso e otimizado para a análise do **perfil escolar e das condições de oferta de ensino**. A escolha não foi aleatória, mas sim agrupada em temas lógicos para responder a perguntas específicas:
