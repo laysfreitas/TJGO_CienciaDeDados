@@ -86,7 +86,7 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 
 * **Conjunto de Dados:** O estudo utilizará os **Microdados do Censo Escolar da Educação Básica de 2024**, disponibilizado pelo INEP.
 
-* **Seleção de Colunas:** Do conjunto total de variáveis, foi realizada uma seleção estratégica de **73 colunas**.
+* **Seleção de Colunas:** Do conjunto total de variáveis, foi realizada uma seleção estratégica de **67 colunas**.
 
 | Nome da Variável | Descrição da Variável |
 |---|---|
@@ -156,10 +156,7 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | NU_ANO_CENSO | Ano do Censo |
 | DT_ANO_LETIVO_INICIO | Início do ano letivo |
 | DT_ANO_LETIVO_TERMINO | Término (previsão) do ano letivo |
-| DURACAO_ANO_LETIVO | Descrição não encontrada |
-| DURACAO_EM_DIAS | Descrição não encontrada |
-| PC_TEMPO_INTEGRAL | Descrição não encontrada |
-| INDICE_TEC | Descrição não encontrada |
+| DURACAO_EM_DIAS | Quantidade de dias de duração em dias do ano letivo |
 
 * **Justificativa da Escolha:**
     A seleção foi projetada para criar um subconjunto de dados coeso e otimizado para a análise do **perfil escolar e das condições de oferta de ensino**. A escolha não foi aleatória, mas sim agrupada em temas lógicos para responder a perguntas específicas:
