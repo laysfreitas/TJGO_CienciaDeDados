@@ -86,7 +86,7 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 
 * **Conjunto de Dados:** O estudo utilizará os **Microdados do Censo Escolar da Educação Básica de 2024**, disponibilizado pelo INEP.
 
-* **Seleção de Colunas:** Do conjunto total de variáveis, foi realizada uma seleção estratégica de **111 colunas**.
+* **Seleção de Colunas:** Do conjunto total de variáveis, foi realizada uma seleção estratégica de **73 colunas**.
 
 | Nome da Variável | Descrição da Variável |
 |---|---|
@@ -116,15 +116,6 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | QT_MAT_FUND_AI | Número de Matrículas do Ensino Fundamental - Anos Iniciais |
 | QT_MAT_FUND_AF | Número de Matrículas do Ensino Fundamental - Anos Finais |
 | QT_MAT_MED | Número de Matrículas do Ensino Médio |
-| QT_MAT_FUND_AI_1 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 1º Ano |
-| QT_MAT_FUND_AI_2 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 2º Ano |
-| QT_MAT_FUND_AI_3 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 3º Ano |
-| QT_MAT_FUND_AI_4 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 4º Ano |
-| QT_MAT_FUND_AI_5 | Número de Matrículas do Ensino Fundamental - Anos Iniciais - 5º Ano |
-| QT_MAT_FUND_AF_6 | Número de Matrículas do Ensino Fundamental - Anos Finais - 6º Ano |
-| QT_MAT_FUND_AF_7 | Número de Matrículas do Ensino Fundamental - Anos Finais - 7º Ano |
-| QT_MAT_FUND_AF_8 | Número de Matrículas do Ensino Fundamental - Anos Finais - 8º Ano |
-| QT_MAT_FUND_AF_9 | Número de Matrículas do Ensino Fundamental - Anos Finais - 9º Ano |
 | QT_MAT_BAS_FEM | Número de Matrículas da Educação Básica - Feminino |
 | QT_MAT_BAS_MASC | Número de Matrículas da Educação Básica - Masculino |
 | QT_MAT_BAS_ND | Número de Matrículas da Educação Básica - Cor/Raça Não Declarada |
@@ -133,12 +124,6 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | QT_MAT_BAS_PARDA | Número de Matrículas da Educação Básica - Cor/Raça Parda |
 | QT_MAT_BAS_AMARELA | Número de Matrículas da Educação Básica - Cor/Raça Amarela |
 | QT_MAT_BAS_INDIGENA | Número de Matrículas da Educação Básica - Cor/Raça Indígena |
-| QT_MAT_BAS_0_3 | Número de Matrículas da Educação Básica - Até 3 anos de idade |
-| QT_MAT_BAS_4_5 | Número de Matrículas da Educação Básica - Entre 4 e 5 anos de idade |
-| QT_MAT_BAS_6_10 | Número de Matrículas da Educação Básica - Entre 6 e 10 anos de idade |
-| QT_MAT_BAS_11_14 | Número de Matrículas da Educação Básica - Entre 11 e 14 anos de idade |
-| QT_MAT_BAS_15_17 | Número de Matrículas da Educação Básica - Entre 15 e 17 anos de idade |
-| QT_MAT_BAS_18_MAIS | Número de Matrículas da Educação Básica - Com 18 ou mais anos de idade |
 | QT_MAT_INF_INT | Número de Matrículas da Educação Infantil - Tempo Integral |
 | QT_MAT_INF_CRE_INT | Número de Matrículas da Educação Infantil - Creche - Tempo Integral |
 | QT_MAT_INF_PRE_INT | Número de Matrículas da Educação Infantil - Pré-Escola - Tempo Integral |
@@ -146,9 +131,6 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | QT_MAT_FUND_AI_INT | Número de Matrículas do Ensino Fundamental - Anos Iniciais - Tempo Integral |
 | QT_MAT_FUND_AF_INT | Número de Matrículas do Ensino Fundamental - Anos Finais - Tempo Integral |
 | QT_MAT_MED_INT | Número de Matrículas do Ensino Médio - Tempo Integral |
-| QT_MAT_BAS_EAD | Número de Matrículas da Educação Básica - Turno não aplicável  para turmas semipresenciais ou de Educação a Distância (EAD) |
-| QT_MAT_BAS_D | Número de Matrículas da Educação Básica - Turno Diurno |
-| QT_MAT_BAS_N | Número de Matrículas da Educação Básica - Turno Noturno |
 | QT_MAT_ZR_URB | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Urbana |
 | QT_MAT_ZR_RUR | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Rural |
 | QT_MAT_ZR_NA | Número de Matrículas da Educação Básica - Localização/Zona de residência do Aluno - Não aplicável para alunos residentes no exterior |
@@ -159,12 +141,8 @@ Este arquivo é mais específico e foca exclusivamente na Educação Profissiona
 | IN_ACES_INTERNET_DISP_PESSOAIS | Equipamentos que os alunos usam para acessar a internet da escola - Dispositivos pessoais (computadores portáteis, celulares, tablets etc.) |
 | TP_REDE_LOCAL | Rede local de interligação de computadores |
 | IN_LABORATORIO_INFORMATICA | Dependências físicas existentes e utilizadas na escola - Laboratório de informática |
-| IN_COMPUTADOR | Equipamentos existentes na escola para uso técnico e administrativo - Computador |
-| IN_DESKTOP_ALUNO | Computadores em uso pelos alunos - Computador de mesa (desktop) |
 | QT_DESKTOP_ALUNO | Quantidade de computadores em uso pelos alunos - Computador de mesa (desktop) |
-| IN_COMP_PORTATIL_ALUNO | Computadores em uso pelos alunos - Computador portátil |
 | QT_COMP_PORTATIL_ALUNO | Quantidade de computadores em uso pelos alunos - Computador portátil |
-| IN_TABLET_ALUNO | Computadores em uso pelos alunos - Tablet |
 | QT_TABLET_ALUNO | Quantidade de computadores em uso pelos alunos - Tablet |
 | IN_LOCAL_FUNC_PREDIO_ESCOLAR | Local de funcionamento da escola - Prédio Escolar |
 | TP_OCUPACAO_PREDIO_ESCOLAR | Forma de ocupação do Prédio escolar |
