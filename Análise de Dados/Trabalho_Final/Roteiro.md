@@ -1,63 +1,150 @@
 # Relatório Final: A Desigualdade Oculta da Infraestrutura Digital na Educação Básica Brasileira
 
-**Autora:** Lays Fraga
-**Data:** 28 de setembro de 2025
-**Disciplina:** Cientista de Dados
+**Autora:** Lays de Freitas
+**Data:** 06 de Outubro de 2025
+**Disciplina:** Ciência de Dados
+**Base de dados utilizada:** Microdados do Censo Escolar de 2024
 
 ---
 
-## 1. Definição do Problema
+## Parte 1
 
-O presente projeto de Ciência de Dados aborda um problema central para o desenvolvimento da educação no Brasil: a qualidade e a equidade do acesso à infraestrutura digital nas escolas de educação básica.
+### 1. Business Understanding
 
-A **pergunta de pesquisa** que norteia este trabalho é:
+**1.1 Negócio por trás dos dados**
+O dataset representa o setor de **educação** no Brasil, especificamente focado na infraestrutura tecnológica das escolas de Ensino Médio.
 
-> A simples existência de um laboratório de informática ou de acesso à internet é um indicador suficiente da inclusão digital escolar, ou uma análise mais aprofundada da proporção de dispositivos por aluno e da qualidade da conexão revela desigualdades estruturais ocultas?
+**1.2 Objetivos estratégicos da organização**
+A organização detentora dos dados (neste caso, o governo, através do Censo Escolar) pode ter os seguintes objetivos:
+1.  **Melhorar a qualidade da educação básica:** Identificar e corrigir desigualdades na infraestrutura escolar para garantir que todos os alunos tenham acesso a recursos tecnológicos.
+2.  **Otimizar investimentos em tecnologia:** Direcionar recursos de forma mais eficiente para as escolas e regiões que mais precisam, com base em evidências concretas.
 
-A **relevância** desta questão é acentuada no cenário pós-pandemia, onde a tecnologia se consolidou como ferramenta pedagógica essencial. Compreender a diferença entre ter uma infraestrutura nominalmente "existente" e uma infraestrutura *funcional e acessível* é fundamental para orientar políticas públicas que visem a uma modernização educacional verdadeiramente equitativa.
+**1.3 Problema de negócio**
+O problema é a **desigualdade no acesso à tecnologia e à internet nas escolas de Ensino Médio do Brasil**. Muitas escolas não possuem a infraestrutura necessária para atender à demanda de seus alunos, criando uma disparidade de oportunidades educacionais. O projeto busca mensurar essa desigualdade e identificar as escolas e regiões mais críticas.
 
-## 2. Coleta de Dados
+**1.4 Tradução para Ciência de Dados**
+O problema de negócio foi transformado em um problema de **clusterização**. O objetivo é agrupar escolas com características semelhantes de infraestrutura e acesso tecnológico para identificar diferentes perfis e níveis de carência.
 
-* **Fonte:** Os dados utilizados são públicos, provenientes dos Microdados do Censo Escolar da Educação Básica de 2024, disponibilizados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).
-* **Método de Obtenção:** Download direto do portal de dados abertos do governo brasileiro.
-* **Formato:** O arquivo original está no formato CSV (`.csv`), com dados em nível de escola.
+**1.5 Hipóteses iniciais**
+1.  **Hipótese 1:** A maioria das escolas públicas, mesmo as que possuem laboratório de informática, têm um número insuficiente de dispositivos para atender seus alunos de forma adequada.
+2.  **Hipótese 2:** Existe uma grande disparidade de acesso tecnológico entre as escolas da rede privada e as da rede pública (estadual e municipal), bem como entre as diferentes Unidades Federativas (UFs).
 
-## 3. Limpeza e Preparação de Dados
+**1.6 Restrições**
+* **Qualidade dos dados:** Os dados do Censo Escolar podem ter inconsistências ou valores ausentes que precisam de tratamento.
+* **Generalização:** A análise se baseia nos dados de 2024, e a situação pode ter mudado.
+* **Complexidade:** A infraestrutura tecnológica é apenas um dos muitos fatores que afetam a qualidade da educação.
 
-O tratamento dos dados brutos foi uma etapa crucial para garantir a qualidade da análise. As seguintes ações foram tomadas:
+**1.7 Critério de sucesso**
+O projeto será considerado bem-sucedido se conseguir **criar um indicador claro e interpretável** sobre o acesso tecnológico nas escolas e **identificar os perfis de escolas (clusters) com diferentes níveis de carência**, permitindo a formulação de recomendações para políticas públicas.
 
-1.  **Filtragem Inicial:** O dataset foi filtrado para incluir apenas escolas com `TP_SITUACAO_FUNCIONAMENTO` igual a 1 (Em atividade) e com `QT_MAT_BAS` (total de matrículas) maior que zero.
-2.  **Engenharia de Features:** Para responder à pergunta de pesquisa, foi necessário criar novas variáveis que capturassem a qualidade do acesso, e não apenas sua existência.
-    * **`QT_TOTAL_DISPOSITIVOS`**: Soma dos desktops, laptops e tablets disponíveis para uso dos alunos.
-    * **`ALUNOS_POR_DISPOSITIVO`**: Métrica central do estudo, calculada como `QT_MAT_BAS / QT_TOTAL_DISPOSITIVOS`. Um valor alto indica baixa disponibilidade de equipamentos.
-    * **`INDICE_ACESSO_GERAL`**: Classificação categórica da métrica anterior em níveis de qualidade (`Ideal`, `Adequado`, `Baixo`, `Crítico`, `Nenhum`), permitindo uma interpretação mais direta.
+**1.8 Métricas de avaliação**
+Como o problema foi modelado como uma tarefa de clusterização, as métricas de avaliação apropriadas seriam o **Silhouette Score**, **Davies-Bouldin Index** e **Calinski-Harabasz Index** para avaliar a qualidade dos agrupamentos formados.
 
-## 4. Análise Exploratória (EDA)
+---
 
-A análise exploratória revelou padrões profundos e confirmou a hipótese inicial do projeto.
+### 2. Data Understanding
 
-* **A Falácia da Infraestrutura Existente:** A análise demonstrou que uma grande parcela das escolas que reportam possuir laboratório de informática e acesso à internet, na verdade, se enquadra nas categorias de acesso "Crítico" ou "Baixo", com mais de 25 alunos por dispositivo.
-* **Disparidade Socioeconômica e Regional:** Foi identificada uma clara divisão: escolas `Privadas` possuem uma qualidade de acesso digital imensamente superior às `Públicas` (Estaduais e, principalmente, Municipais). Geograficamente, as regiões `Norte` e `Nordeste` concentram a maior proporção de escolas com acesso "Crítico".
-* **Vulnerabilidade Social:** A análise aprofundada em escolas com `TP_LOCALIZACAO_DIFERENCIADA` mostrou que aquelas localizadas em **Terras Indígenas** e **Áreas de Quilombos** apresentam os piores indicadores de acesso digital do país, evidenciando uma sobreposição de desigualdades históricas e tecnológicas.
+**2.1 Coleta**
+* **Dados disponíveis:** A base inicial continha 215.545 registros e 24 colunas.
+* **Origem dos dados:** Os dados são públicos, provenientes dos microdados do **Censo Escolar de 2024**.
+* **Adequação:** O volume e a granularidade dos dados são adequados para a análise, pois contêm informações detalhadas sobre cada escola do país.
+* **Limitações:** Não há limitações éticas ou de privacidade, pois os dados são públicos e anonimizados.
+* **Principais variáveis:** `SG_UF`, `TP_DEPENDENCIA`, `QT_MAT_BAS`, `QT_MAT_MED`, `IN_LABORATORIO_INFORMATICA`, `IN_BANDA_LARGA`, `QT_COMP_ALUNO`, `QT_TABLET_ALUNO`, `QT_NOTEBOOK_ALUNO`.
 
-## 5. Modelagem
+**2.2 Exploração**
+* **Dados faltantes:** Foram identificados valores faltantes nas colunas de quantidade de dispositivos (`QT_...`), que foram tratados preenchendo-os com zero.
+* **Outliers:** A análise de boxplot revelou uma grande variação e a presença de outliers na distribuição de alunos por dispositivo, especialmente nas redes estadual e municipal.
+* **Balanceamento:** A tarefa é de clusterização, portanto, o conceito de balanceamento da variável-alvo não se aplica diretamente.
+* **Correlações:** A análise exploratória mostrou que a simples existência de um laboratório de informática (`IN_LABORATORIO_INFORMATICA`) não garante um bom acesso tecnológico, indicando a necessidade de analisar a proporção de alunos por dispositivo.
+* **Sugestões preliminares:** Os dados sugerem que as escolas federais possuem a melhor infraestrutura, enquanto as estaduais e municipais enfrentam os maiores desafios. Há também uma clara desigualdade regional entre os estados.
 
-* **Algoritmo Escolhido:** Foi utilizado o **K-Means Clustering**, um algoritmo de aprendizado não supervisionado.
-* **Justificativa:** O objetivo não era prever um valor específico, mas sim descobrir "perfis" ou agrupamentos naturais de escolas com base em suas características de infraestrutura e demografia. A clusterização é a abordagem ideal para essa tarefa de segmentação e descoberta de padrões.
-* **Avaliação de Desempenho:** A escolha do número ótimo de clusters (k=4) foi validada pelo "Método do Cotovelo" (Elbow Method). A avaliação final da qualidade dos clusters foi qualitativa, baseada na coesão e na interpretabilidade dos perfis encontrados, que se mostraram distintos e alinhados com as descobertas da EDA.
+---
 
-## 6. Interpretação dos Resultados
+### 3. Data Preparation
 
-A aplicação do modelo de clusterização permitiu traduzir os dados complexos em quatro perfis claros e acionáveis:
+**3.1 Seleção de atributos**
+Foram selecionadas variáveis relevantes para o problema, como localização (`SG_UF`), dependência administrativa (`TP_DEPENDENCIA`), número de matrículas (`QT_MAT_BAS`), acesso à internet (`IN_BANDA_LARGA`) e quantidade de dispositivos.
 
-* **Cluster 0 - Gigantes Públicas com Acesso Crítico:** Escolas de grande porte, majoritariamente estaduais e municipais, com muitos alunos, mas com uma proporção de alunos por dispositivo extremamente alta (acesso "Crítico"). Representam o maior desafio de investimento em larga escala.
-* **Cluster 1 - Privadas e Federais Bem Equipadas:** Perfil de excelência. Escolas privadas e federais, com um baixo número de alunos por dispositivo (acesso "Ideal" ou "Adequado") e alta prevalência de banda larga.
-* **Cluster 2 - Pequenas e Desassistidas:** Escolas de pequeno porte, principalmente municipais e localizadas em zonas rurais, que frequentemente não possuem sequer um laboratório ou banda larga. São os "desertos digitais" do sistema educacional.
-* **Cluster 3 - Médias Públicas em Luta:** Um grupo intermediário de escolas públicas de médio porte que possuem alguma infraestrutura, mas lutam com um acesso de qualidade "Baixa" a "Crítica".
+**3.2 Tratamento de registros**
+Foram descartados registros de escolas que não estavam em atividade e aquelas que não possuíam matrículas no Ensino Médio, resultando em um conjunto de dados final de 29.993 escolas.
 
-## 7. Comunicação dos Resultados
+**3.3 Subconjuntos de dados**
+Para uma tarefa de clusterização, a divisão em treino e teste não é tipicamente necessária da mesma forma que em modelos supervisionados. O modelo foi aplicado a todo o conjunto de dados preparado.
 
-Os resultados deste projeto serão comunicados através de dois artefatos principais:
+**3.4 Outliers**
+Os outliers foram mantidos na análise, pois representam escolas com situações extremas (muito boas ou muito ruins) que são importantes para entender a dimensão da desigualdade.
 
-1.  **Relatório Técnico:** Este documento (`.md`), acompanhado do código-fonte completo (`.py`), que detalha toda a metodologia e as descobertas.
-2.  **Apresentação Oral:** Uma apresentação de 10 minutos focada na narrativa dos dados, começando com a provocação inicial (a falácia do "ter laboratório"), passando pelas evidências visuais da desigualdade e culminando na apresentação dos perfis de escolas identificados pelo modelo. A comunicação visual será priorizada para garantir a clareza e o impacto das conclusões.
+**3.5 Criação de novas variáveis (feature engineering)**
+* `QT_TOTAL_DISPOSITIVOS`: Soma de computadores de mesa, notebooks e tablets disponíveis para os alunos.
+* `ALUNOS_MEDIO_POR_DISPOSITIVO`: Indicador principal que representa a proporção de alunos do Ensino Médio por dispositivo.
+* `INDICE_ACESSO`: Classificação categórica ("Ideal", "Adequado", "Baixo", "Crítico", "Nenhum") com base no indicador anterior.
+
+**3.6 Codificação de variáveis categóricas**
+As variáveis categóricas, como `SG_UF` e `TP_DEPENDENCIA`, foram transformadas em variáveis dummy (one-hot encoding) para serem utilizadas no modelo de clusterização.
+
+**3.7 Normalização/padronização de variáveis numéricas**
+Embora não explicitamente detalhado no notebook, é uma prática padrão e recomendada aplicar a normalização (como `StandardScaler`) antes de usar o K-Means, para que as variáveis com escalas diferentes não distorçam o resultado.
+
+**3.10 Conjunto final**
+O dataset final, após a limpeza, seleção de atributos e engenharia de features, estava pronto para a aplicação do algoritmo de Machine Learning.
+
+---
+
+## Parte 2
+
+### 4. Modeling
+
+**4.1 Escolha da tarefa**
+( ) Classificação
+( ) Regressão
+(X) **Clusterização** (segmentar escolas com base em sua infraestrutura tecnológica).
+
+**4.2 Algoritmos utilizados**
+* **K-Means:** Foi escolhido por ser um algoritmo de clusterização eficiente, robusto e amplamente utilizado, adequado para agrupar as escolas em um número pré-definido de clusters com base em suas similaridades.
+
+**4.3 Preparação para modelagem**
+Sim, houve ajustes adicionais. As variáveis categóricas foram transformadas em dummies e as features numéricas foram selecionadas para a modelagem. A divisão em treino/teste não foi necessária para esta abordagem não supervisionada.
+
+**4.4 Construção dos modelos**
+O modelo K-Means foi treinado com o conjunto de dados preparado. O número de clusters foi definido como 4. O algoritmo agrupou as 29.993 escolas em quatro clusters distintos, com base nas features selecionadas.
+
+* Cluster 0: 3.344 escolas
+* Cluster 1: 5.653 escolas
+* Cluster 2: 465 escolas
+* Cluster 3: 19.668 escolas
+
+---
+
+### 5. Evaluation
+
+**5.1 Avaliação do desempenho**
+* [cite_start]**Métricas utilizadas:** Para a clusterização, as métricas adequadas seriam **Silhouette Score**, **Davies-Bouldin Index** e **Calinski-Harabasz Index**[cite: 221]. Elas medem a coesão (quão similares são os pontos dentro de um mesmo cluster) e a separação (quão distintos são os clusters entre si).
+* **Valores obtidos:** O notebook não apresenta os cálculos explícitos dessas métricas de avaliação. Uma análise completa deveria incluí-los para validar a qualidade dos clusters formados.
+
+**5.2 Comparação de modelos**
+Apenas um algoritmo (K-Means) foi testado, portanto não há comparação de modelos.
+
+**5.3 Alinhamento com o problema de negócio**
+Os resultados atendem ao critério de sucesso definido na Parte 1, pois o modelo conseguiu segmentar as escolas em grupos com características distintas, revelando diferentes perfis de infraestrutura e permitindo a identificação de grupos com maiores carências.
+
+---
+
+### 6. Conclusão e Encaminhamentos
+
+**6.1 Principais descobertas**
+* O modelo revelou que a grande maioria das escolas se concentra em um único cluster (Cluster 3, com 19.668 escolas), sugerindo um perfil predominante de infraestrutura no país.
+* A análise dos clusters por estado e dependência administrativa permite identificar padrões regionais e sistêmicos de desigualdade. Por exemplo, o Cluster 0 é predominantemente composto por escolas de Minas Gerais, indicando um perfil específico de infraestrutura naquele estado.
+* A análise confirmou que a desigualdade de acesso é um problema crítico, com a maioria das escolas, mesmo com laboratórios de informática, apresentando um índice de acesso "Crítico" ou "Baixo".
+
+**6.2 Limitações do estudo**
+* A análise se baseia em dados auto-reportados no Censo Escolar, que podem conter imprecisões.
+* O número de clusters (k=4) foi uma escolha inicial e poderia ser otimizado com métodos como o "Elbow Method" ou a análise do Silhouette Score.
+* O modelo de clusterização identifica padrões, mas não explica as causas da desigualdade.
+
+**6.3 Recomendações futuras**
+* **Aprofundar o estudo:** Analisar os perfis de cada cluster em mais detalhes, cruzando com outras variáveis como o desempenho dos alunos (IDEB) para medir o impacto da infraestrutura.
+* **Testar novos algoritmos:** Utilizar outros algoritmos de clusterização, como o DBSCAN, que não exige a pré-definição do número de clusters.
+* **Enriquecer os dados:** Integrar a base de dados com fontes externas, como dados socioeconômicos do IBGE, para uma análise mais completa das causas da desigualdade.
+
+**6.4 Conclusão final**
+O objetivo inicial de analisar e mensurar a desigualdade de acesso tecnológico nas escolas de Ensino Médio do Brasil foi alcançado. O projeto utilizou técnicas de Ciência de Dados para transformar um problema de negócio em uma análise quantitativa, criando um indicador de acesso e segmentando as escolas em grupos com perfis distintos. Os resultados fornecem evidências claras sobre as disparidades existentes e podem servir como um ponto de partida para a formulação de políticas públicas mais eficazes.
